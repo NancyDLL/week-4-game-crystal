@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Crystal Collector!</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nan Loyd-Leffingwell" />
+  <meta name="description" content="My first JQuery" />
+  <meta name="classification" content="game" />
+  <meta name="copyright" content="&copy; 2017 Nan Loyd-Leffingwell" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>The Crystal Collector!</h1>
+			<p>You will be given a random number at the start of the game.</p>
+			<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+			<p>You win the game by matching your total score to random number, you lose the game if your total score goes aboce the random number.</p>
+			<p>The value of each crystal is hidden from you until you click on it.</p>
+			<p>Each time when the game starts, the game will change the values of each crytal.</p>
+
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Random Number</h3>
+					<p><span id="ranNum"></span></p>
+				</div>
+				<div class="col-md-4">
+					<h3>Wins:</h3>
+					<p><span id="winCount"></span></p>
+				</div>
+				<div class="col-md-4">
+					<h3>Losses:</h3>
+					<p><span id="lossCount"></span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Crystal Images will go here.</h3>
+					<p><span id="ruby"></span></p>
+					<p><span id="diamond"></span></p>
+					<p><span id="saphire"></span></p>
+					<p><span id="emerald"></span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Your total score is:</h3>
+					<p><span id="yourScore"></span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
