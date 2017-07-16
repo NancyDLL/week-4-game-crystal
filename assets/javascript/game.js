@@ -6,13 +6,14 @@ console.log("js for crystal game connected")
 	var wins = 0;
 	var losses = 0;
 //Start a round with:
-function getRndInteger(min,max){
+
+$(".theme-button").on("click", function() {
 	//Generate a random number between 19 to 120 for matchNum variable.
-	var matchNum = Math.floor(Math.random()* (max - min)) + min;
+	var matchNum = Math.floor(Math.random() * 120) + 19;
 	console.log("The number to match is " + matchNum);
-		//Math.floor(Math.random() * 120) + 19;
-		//use JQuery to display matchNum in the ranNum div.
-			//matchNum = $('#ranNum');
+	//use JQuery to display matchNum in the ranNum div.
+	//matchNum = $('#ranNum');
+	$("#ranNum").html(matchNum);
 	//Generate a random number between 1 to 12 for rubyNum - diamondNum - sapphireNum - emeraldNum
 			//Math.floor(Math.random() * 12) + 1;
 		//function numGenerator(){}
@@ -36,6 +37,6 @@ function getRndInteger(min,max){
 			//else more than -> count loss, reset matchNum and gems and start a new round.
 				//use JQuery to display loss in the loss div
 					//
-}
+});
 //Considerations
 	//The variable for each gem would need to be held within the function for each gem.
