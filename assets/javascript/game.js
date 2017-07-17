@@ -15,13 +15,16 @@ $(".theme-button").on("click", function() {
 	//matchNum = $('#ranNum');
 	$("#ranNum").html(matchNum);
 	//Generate a random number between 1 to 12 for rubyNum - diamondNum - sapphireNum - emeraldNum
-			//Math.floor(Math.random() * 12) + 1;
-		//function numGenerator(){}
-			//These variables created within bigger function:
-				//rubyNum
-				//diamondNum
-				//sapphireNum
-				//emeraldNum
+	var rubyNum = Math.floor(Math.random() * 12) + 1;
+	console.log("The number for ruby is " + rubyNum);
+	var diamondNum = Math.floor(Math.random() * 12) + 1;
+	console.log("The number for diamond is " + diamondNum);
+	var sapphireNum = Math.floor(Math.random() * 12) + 1;
+	console.log("The number for sapphire is " + sapphireNum);
+	var emeraldNum = Math.floor(Math.random() * 12) + 1;
+	console.log("The number for emerald is " + emeraldNum);
+
+	
 		//yourScore is populated by the clicks on each gem image.
 		//function gemAdder(){}
 			//capture in the variable yourScore the value of the image clicked each time
@@ -36,7 +39,8 @@ $(".theme-button").on("click", function() {
 					//
 			//else more than -> count loss, reset matchNum and gems and start a new round.
 				//use JQuery to display loss in the loss div
-					//
+	$("#winCount").html(wins);
+	$("#lossCount").html(losses);
 });
 //Considerations
 	//The variable for each gem would need to be held within the function for each gem.
