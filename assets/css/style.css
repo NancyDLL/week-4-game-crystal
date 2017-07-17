@@ -1,4 +1,18 @@
+body {
+    color: white;
+}
+.jumbotron h1 {
+	font-size: 48px;
+}
+.jumbotron p {
+	font-size: 28
+	px;
+}
+.jumbotron{
+	background-image: url("../images/dirt.jpg");
+}
 .img-thumbnail{
 	width: 150px;
 	height: 150px;
 }
+font-weight: bold;

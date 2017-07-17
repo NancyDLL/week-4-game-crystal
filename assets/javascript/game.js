@@ -7,7 +7,7 @@ console.log("js for crystal game connected")
 	var losses = 0;
 //Start a round with:
 
-$(".theme-button").on("click", function() {
+$(".btn-lg").on("click", function() {
 	//Generate a random number between 19 to 120 for matchNum variable.
 	var matchNum = Math.floor(Math.random() * 120) + 19;
 	console.log("The number to match is " + matchNum);
@@ -23,24 +23,51 @@ $(".theme-button").on("click", function() {
 	console.log("The number for sapphire is " + sapphireNum);
 	var emeraldNum = Math.floor(Math.random() * 12) + 1;
 	console.log("The number for emerald is " + emeraldNum);
-
-	
+	var yourScore = 0;
 		//yourScore is populated by the clicks on each gem image.
 		//function gemAdder(){}
-			//capture in the variable yourScore the value of the image clicked each time
-			//use JQuery to display yourScore in the yourScore div
-				//yourScore = $('yourScore');
+		 $("#ruby").on("click", function() {
+		 	//capture in the variable yourScore the value of the image clicked each time
+		 	var latestClick = yourScore+rubyNum; 
+		 	console.log("The number for the latestClick variable is " + latestClick);
+		 	//use JQuery to display yourScore in the yourScore div
+		 	$("#yourScore").html(latestClick);
+		 });
+
+		 $("#diamond").on("click", function() {
+		 	//capture in the variable yourScore the value of the image clicked each time
+		 	var latestClick = yourScore+diamondNum; 
+		 	console.log("The number for the latestClick variable is " + latestClick);
+		 	//use JQuery to display yourScore in the yourScore div
+		 	$("#yourScore").html(latestClick);
+		 });		
+
+ 		$("#sapphire").on("click", function() {
+		 	//capture in the variable yourScore the value of the image clicked each time
+		 	var latestClick = yourScore+sapphireNum; 
+		 	console.log("The number for the latestClick variable is " + latestClick);
+		 	//use JQuery to display yourScore in the yourScore div
+		 	$("#yourScore").html(latestClick);
+		 });
+
+		$("#emerald").on("click", function() {
+		 	//capture in the variable yourScore the value of the image clicked each time
+		 	var latestClick = yourScore+emeraldNum; 
+		 	console.log("The number for the latestClick variable is " + latestClick);
+		 	//use JQuery to display yourScore in the yourScore div
+		 	$("#yourScore").html(latestClick);
+		 });
+			
 			//yourScore needs to be compared against the matchNum each time.
 			//This variable created by user clicks -> yourScore
 			//if less than -> another click is allowed.
 		//End function with:
 			//else match than -> count win, reset matchNum and gems.
 				//use JQuery to display win in the win div
-					//
+				$("#winCount").html(wins);
 			//else more than -> count loss, reset matchNum and gems and start a new round.
 				//use JQuery to display loss in the loss div
-	$("#winCount").html(wins);
-	$("#lossCount").html(losses);
+				$("#lossCount").html(losses);
 });
 //Considerations
 	//The variable for each gem would need to be held within the function for each gem.
