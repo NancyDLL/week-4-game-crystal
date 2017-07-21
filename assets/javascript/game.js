@@ -8,48 +8,59 @@ console.log("js for crystal game connected")
 //Start a round with:
 
 $(".btn-lg").on("click", function() {
+	var rubyNum = 0;
+	var diamondNum = 0;
+	var sapphireNum = 0;
+	var emeraldNum = 0;
+
 	//Generate a random number between 19 to 120 for targetNumber variable.
 	var targetNumber = Math.floor(Math.random() * 120) + 19;
 	console.log("The number to match is " + targetNumber);
 	$("#targetNumber").html(targetNumber);
+	$("#winCount").html(wins);
+	$("#lossCount").html(losses);
+	$("#alert").empty();
 
 	var counter = 0;
-	var imageCrystal = $("#crystal-image");
+	$("#yourScore").html(counter);
 
-	var rubyNum = Math.floor(Math.random() * 12) + 1;
+	rubyNum = Math.floor(Math.random() * 12) + 1;
 	console.log("The ruby random number is " + rubyNum);
-	imageCrystal.attr("data-crystalvalue", rubyNum);
+	var ruby = $("#ruby");
+	ruby.attr("data-crystalvalue", rubyNum);
 
-	var diamondNum = Math.floor(Math.random() * 12) + 1;
+	diamondNum = Math.floor(Math.random() * 12) + 1;
 	console.log("The diamond random number is " + diamondNum);
-	imageCrystal.attr("data-crystalvalue", diamondNum);
+	var diamond = $("#diamond");
+	diamond.attr("data-crystalvalue", diamondNum);
 
-	var sapphireNum = Math.floor(Math.random() * 12) + 1;
+	sapphireNum = Math.floor(Math.random() * 12) + 1;
 	console.log("The sapphire random number is " + sapphireNum);
-	imageCrystal.attr("data-crystalvalue", sapphireNum);
+	var sapphire = $("#sapphire");
+	sapphire.attr("data-crystalvalue", sapphireNum);
 
-	var emeraldNum = Math.floor(Math.random() * 12) + 1;
+	emeraldNum = Math.floor(Math.random() * 12) + 1;
 	console.log("The emerald random number is " + emeraldNum);
-	imageCrystal.attr("data-crystalvalue", emeraldNum);
+	var emerald = $("#emerald");
+	emerald.attr("data-crystalvalue", emeraldNum);
 
 
-	$("#crystal-image").on("click", function() {
+	$(".img-thumbnail").on("click", function() {
 		var crystalValue = ($(this).attr("data-crystalvalue"));
     	crystalValue = parseInt(crystalValue);
     	counter += crystalValue;
     	$("#yourScore").html(counter);
     	if (counter === targetNumber) {
-      		alert("You win!");
+    		$("#alert").append("<div class='alert alert-success' role='alert'>Well Done! You won, select the Start Game button to start the next game.</div>");
+      		wins++;
+      		counter = 0;
       		$("#winCount").html(wins);
     	}
-
-    	else if (counter >= targetNumber) {
-      		alert("You lose!");
+    	else if (counter > targetNumber) {
+      		$("#alert").append("<div class='alert alert-danger' role='alert'>You lost, select the Start Game button to start the next game. Better Luck next time!</div>");
+      		losses++;
+      		counter = 0;
       		$("#lossCount").html(losses);
     	}
     });			
 });
-//Considerations
-	//The variable for each gem would need to be held within the function for each gem.
-//Alternative:
-	//Can yourScore be an object that has a ruby, diamond, sapphire, and emerald method?
