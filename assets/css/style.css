@@ -1,12 +1,10 @@
-body {
-    color: white;
-}
 .jumbotron h1 {
 	font-size: 48px;
+	color: white;
 }
 .jumbotron p {
-	font-size: 28
-	px;
+	font-size: 28px;
+	color: green;
 }
 .jumbotron{
 	background-image: url("../images/dirt.jpg");
